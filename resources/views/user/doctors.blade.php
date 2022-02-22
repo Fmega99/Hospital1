@@ -17,3 +17,9 @@
               <p class="text-xl mb-0">{{$doctors->name}}</p>
               <span class="text-sm text-grey">{{$doctors->Speciality}}</span>
             </div>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
+  </div>
