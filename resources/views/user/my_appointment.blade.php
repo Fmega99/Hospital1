@@ -115,13 +115,17 @@
                 <th style="padding: 10px; font-size: 20px; color: white;">Date</th>
                 <th style="padding: 10px; font-size: 20px; color: white;">Message</th>
                 <th style="padding: 10px; font-size: 20px; color: white;">Status</th>
+                <th style="padding: 10px; font-size: 20px; color: white;">Cancel appointment</th>
             </tr>
             @foreach ($appoint as $appoints)
-                <tr>
-                    <td style>{{$appoints->doctor}}</td>
-                    <td>{{$appoints->date}}</td>
-                    <td>{{$appoints->message}}</td>
-                    <td>{{$appoints->status}}</td>
+                <tr style="background-color: green" align="center">
+                    <td style="padding: 10px; font-size: 20px; color: white;">{{ $appoints->doctor }}</td>
+                    <td style="padding: 10px; font-size: 20px; color: white;">{{ $appoints->date }}</td>
+                    <td style="padding: 10px; font-size: 20px; color: white;">{{ $appoints->message }}</td>
+                    <td style="padding: 10px; font-size: 20px; color: white;">{{ $appoints->status }}</td>
+                    <td style="padding: 10px; font-size: 20px; color: white;"><a
+                            href="{{ url('cancel_appoint', $appoints->id) }}" class="btn btn-danger">Cancel</a>
+                    </td>
                 </tr>
             @endforeach
         </table>
