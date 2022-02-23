@@ -18,13 +18,11 @@ use App\Http\Controllers\AdminController;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class, 'index']);
-
 Route::get('/home', [HomeController::class, 'redirect']);
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
 Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
 Route::post('/appointment', [HomeController::class, 'appointment']);
+Route::get('/myappointment', [HomeController::class, 'myappointment']);

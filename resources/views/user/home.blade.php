@@ -88,6 +88,9 @@
                         </li>
                         @if (Route::has('login'))
                             @auth
+                                <li class="nav-item">
+                                    <a class="nav-link" style="background-color: greenyellow; color: white" href="{{url('myappointment')}}">My Appointment</a>
+                                </li>
                                 <x-app-layout>
                                 </x-app-layout>
                             @else
