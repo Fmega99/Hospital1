@@ -28,37 +28,36 @@
                     </div>
                 </div>
             </div>
-        </div @include('admin.sidebar') @include('admin.navbar') <div class="container-fluid page-body-wrapper">
-        <div align="center" style="padding-top: 100px">
-            <table>
-                <tr style="background-color: crimson;">
-                    <th style="padding: 10px">Customer Name</th>
-                    <th style="padding: 10px">Email</th>
-                    <th style="padding: 10px">Phone</th>
-                    <th style="padding: 10px">Doctor Name</th>
-                    <th style="padding: 10px">Date</th>
-                    <th style="padding: 10px">Message</th>
-                    <th style="padding: 10px">Status</th>
-                    <th style="padding: 10px">Approved</th>
-                    <th style="padding: 10px">Cancelled</th>
-                </tr>
-                @foreach ($data as $info)
+        </div>
+        @include('admin.sidebar')
+        @include('admin.navbar')
+        <div class="container-fluid page-body-wrapper">
+            <div align="center" style="padding-top: 100px">
+                <table>
+                    <tr style="background-color: crimson;">
+                        <th style="padding: 10px">Doctor Name</th>
+                        <th style="padding: 10px">Phone</th>
+                        <th style="padding: 10px">Speciality</th>
+                        <th style="padding: 10px">Room No</th>
+                        <th style="padding: 10px">Doctor Image</th>
+                        <th style="padding: 10px">Modify</th>
+                        <th style="padding: 10px">Delete</th>
+                    </tr>
+                    @foreach ($doc as $data)
                     <tr align="center" style="background-color: khaki; color:black;">
-                        <td>{{$info->name}}</td>
-                        <td>{{$info->email}}</td>
-                        <td>{{$info->phone}}</td>
-                        <td>{{$info->doctor}}</td>
-                        <td>{{$info->date}}</td>
-                        <td>{{$info->message}}</td>
-                        <td>{{$info->status}}</td>
-                        <td><a class="btn btn-behance" href="{{url('approved', $info->id)}}">Approve</a></td>
-                        <td><a class="btn btn-danger"href="{{url('cancelled', $info->id)}}">Cancel</a></td>
+                        <td>{{$data->name}}</td>
+                        <td>{{$data->number}}</td>
+                        <td>{{$data->Speciality}}</td>
+                        <td>{{$data->room}}</td>
+                        <td><img height="100" width="100"src="doctorimage/{{$data->image}}" ></td>
+                        <td><a class="btn btn-success" href="{{url('update', $data->id)}}">Edit</a></td>
+                        <td><a class="btn btn-danger"href="{{url('delete', $data->id)}}">Delete</a></td>
                     </tr>
                 @endforeach
-            </table>
+            </div>
         </div>
-    </div>
-    @include('admin.script')
+        @include('admin.script')
+
 </body>
 
 </html>

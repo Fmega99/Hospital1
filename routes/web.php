@@ -22,10 +22,14 @@ Route::get('/home', [HomeController::class, 'redirect']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
 Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
 Route::get('/show_appointments', [AdminController::class, 'show_appointments']);
+Route::get('/approved/{id}', [AdminController::class, 'approved']);
+Route::get('/cancelled/{id}', [AdminController::class, 'cancelled']);
+Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
+
 Route::post('/appointment', [HomeController::class, 'appointment']);
 Route::get('/myappointment', [HomeController::class, 'myappointment']);
 Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
-
