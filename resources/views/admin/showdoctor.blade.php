@@ -44,16 +44,16 @@
                         <th style="padding: 10px">Delete</th>
                     </tr>
                     @foreach ($doc as $data)
-                    <tr align="center" style="background-color: khaki; color:black;">
-                        <td>{{$data->name}}</td>
-                        <td>{{$data->number}}</td>
-                        <td>{{$data->Speciality}}</td>
-                        <td>{{$data->room}}</td>
-                        <td><img height="100" width="100"src="doctorimage/{{$data->image}}" ></td>
-                        <td><a class="btn btn-success" href="{{url('update', $data->id)}}">Edit</a></td>
-                        <td><a class="btn btn-danger"href="{{url('delete', $data->id)}}">Delete</a></td>
-                    </tr>
-                @endforeach
+                        <tr align="center" style="background-color: khaki; color:black;">
+                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->number }}</td>
+                            <td>{{ $data->Speciality }}</td>
+                            <td>{{ $data->room }}</td>
+                            <td><img height="100" width="100" src="doctorimage/{{ $data->image }}"></td>
+                            <td><a class="btn btn-success" href="{{ url('updatedoctor', $data->id) }}">Edit</a></td>
+                            <td><a class="btn btn-danger" href="{{ url('deletedoctor', $data->id) }}">Delete</a></td>
+                        </tr>
+                    @endforeach
             </div>
         </div>
         @include('admin.script')

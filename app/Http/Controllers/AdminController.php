@@ -25,7 +25,7 @@ class AdminController extends Controller
         $doctor->room = $request->room;
         $doctor->Speciality = $request->Speciality;
         $doctor->save();
-        return redirect()->back()->with('message', 'Doctor Added Successfully!!!!!!!!!!');
+        return redirect()->back()->with('message', 'Doctor Added Successfully!');
     }
     public function show_appointments()
     {
@@ -50,5 +50,15 @@ class AdminController extends Controller
     {
         $doc = Doctor::all();
         return view('admin.showdoctor', compact('doc'));
+    }
+    public function deletedoctor($id)
+    {
+        $doc = Doctor::find($id);
+        $doc->delete();
+        return redirect()->back();
+    }
+    public function updatedoctor($id)
+    {
+
     }
 }
