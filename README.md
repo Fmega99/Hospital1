@@ -1,3 +1,57 @@
+## About the System
+
+
+-   Fully Dynamic. 
+-   User Friendly.
+-   Custom Css or Js.
+-   Laravel 9.x.
+
+## Developing
+
+**Getting Started**
+
+*Clone this repo:*
+
+```
+https://github.com/Ahmad-Chebbo/Students-Attendance-System-V1.git
+```
+
+*Enter the project folder:*
+
+```
+cd Students-Attendance-System-V1
+```
+
+*Install php dependencies:*
+
+```
+composer install
+```
+
+*Copy the env.example file to .env and generate new key:*
+
+```
+cp .env.example .env
+
+php artisan key:generate
+```
+
+*Open to the .env file and change the database credentials to your database:*
+
+*Migrate the database and the seeds:*
+
+```
+php artisan migrate:fresh --seed
+```
+
+**Workflow**
+
+*Serve the project:*
+
+```
+php artisan serve
+```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
