@@ -12,14 +12,11 @@
 
 *Clone this repo:*
 
-```
-https://github.com/Ahmad-Chebbo/Students-Attendance-System-V1.git
-```
 
 *Enter the project folder:*
 
 ```
-cd Students-Attendance-System-V1
+cd Hospital
 ```
 
 *Install php dependencies:*
