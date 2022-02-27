@@ -78,4 +78,8 @@ class AdminController extends Controller
         $doctor->save();
         return redirect()->back()->with('message', 'Data updated successfully!');
     }
+    public function emailview($id)
+    {
+        return view('admin.email_view');
+    }
 }

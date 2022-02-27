@@ -41,18 +41,20 @@
                     <th style="padding: 10px">Status</th>
                     <th style="padding: 10px">Approved</th>
                     <th style="padding: 10px">Cancelled</th>
+                    <th style="padding: 10px">Send Notification</th>
                 </tr>
                 @foreach ($data as $info)
                     <tr align="center" style="background-color: khaki; color:black;">
-                        <td>{{$info->name}}</td>
-                        <td>{{$info->email}}</td>
-                        <td>{{$info->phone}}</td>
-                        <td>{{$info->doctor}}</td>
-                        <td>{{$info->date}}</td>
-                        <td>{{$info->message}}</td>
-                        <td>{{$info->status}}</td>
-                        <td><a class="btn btn-behance" href="{{url('approved', $info->id)}}">Approve</a></td>
-                        <td><a class="btn btn-danger"href="{{url('cancelled', $info->id)}}">Cancel</a></td>
+                        <td>{{ $info->name }}</td>
+                        <td>{{ $info->email }}</td>
+                        <td>{{ $info->phone }}</td>
+                        <td>{{ $info->doctor }}</td>
+                        <td>{{ $info->date }}</td>
+                        <td>{{ $info->message }}</td>
+                        <td>{{ $info->status }}</td>
+                        <td><a class="btn btn-behance" href="{{ url('approved', $info->id) }}">Approve</a></td>
+                        <td><a class="btn btn-danger" href="{{ url('cancelled', $info->id) }}">Cancel</a></td>
+                        <td><a class="btn btn-primary" href="{{ url('emailview', $info->id) }}">Send Mail</a></td>
                     </tr>
                 @endforeach
             </table>
