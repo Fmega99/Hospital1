@@ -16,7 +16,7 @@
 *Enter the project folder:*
 
 ```
-cd Hospital1
+cd Hospital
 ```
 
 *Install php dependencies:*
